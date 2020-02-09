@@ -1,0 +1,10 @@
+node_modules
+build
+dist
+.cache
+
+# Local edtior settings
+.vscode
+
+# Prettier settings
+.prettierrc
