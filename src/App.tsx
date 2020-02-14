@@ -1,6 +1,19 @@
 import React from 'react'
-import styled from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 
-const Base = styled.div``
+import { Resume } from './components'
+import { GlobalStyle, theme } from './styles'
 
-export default () => <Base>Hello World!</Base>
+type ThemeType = typeof theme
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <Resume />
+      <GlobalStyle />
+    </ThemeProvider>
+  )
+}
+
+export { ThemeType }
+export default App
