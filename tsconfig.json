@@ -2,10 +2,14 @@
   "compilerOptions": {
     "target": "es5",
     "module": "es2015",
+    "noEmit": true,
     "jsx": "react",
     "moduleResolution": "node",
     "lib": ["dom", "es5", "es6"],
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noUnusedLocals": true
   },
   "include": ["src/**/*"]
 }

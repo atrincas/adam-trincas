@@ -1,13 +1,23 @@
 import React from 'react'
 import { HeaderContainer } from './styles'
 
-function Header({ children, name, title }) {
+type Props = {
+  children: React.ReactNode
+  name: string
+  title: string
+}
+
+function Header({ children, name, title }: Props) {
   return (
     <HeaderContainer>
       {children}
       <hgroup>
         <h1>{name}</h1>
-        <h2>{title}</h2>
+        <div>
+          <h2>
+            <span>{title}</span>
+          </h2>
+        </div>
       </hgroup>
     </HeaderContainer>
   )

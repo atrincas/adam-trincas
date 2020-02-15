@@ -3,10 +3,18 @@ export const theme = {
     fontFamily: '"Open Sans", sans-serif',
 
     fontSizes: {
-      small: '0.75rem',
-      medium: '1rem',
-      large: '1.25rem',
-      extraLarge: '1.5rem'
+      mobile: {
+        small: '1.75rem',
+        medium: '2.5rem',
+        large: '3.5rem',
+        extraLarge: '4.5rem'
+      },
+      desktop: {
+        small: '1rem',
+        medium: '1.5rem',
+        large: '2rem',
+        extraLarge: '2.5rem'
+      }
     },
 
     fontWeights: {
@@ -16,15 +24,26 @@ export const theme = {
   },
 
   gutters: {
-    extraSmall: '0.5rem',
-    small: '1rem',
-    medium: '1.5rem',
-    large: '2.5rem',
-    extraLarge: '3.5rem'
+    mobile: {
+      extraSmall: '1.5rem',
+      small: '2rem',
+      medium: '2.5rem',
+      large: '3.5rem',
+      extraLarge: '4.5rem'
+    },
+    desktop: {
+      extraSmall: '0.5rem',
+      small: '1rem',
+      medium: '1.5rem',
+      large: '2.5rem',
+      extraLarge: '3.5rem'
+    }
   },
 
   colors: {
     white: '#fff',
-    darkBlue: '#032f64'
+    darkBlue: '#032f64',
+    blue: '#73a5c6',
+    lightBlue: '#c7dbe8'
   }
 }

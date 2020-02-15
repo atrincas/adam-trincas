@@ -10,7 +10,9 @@ import {
   MainSection,
   SectionHeader,
   SideSection,
-  SideSubSection
+  SideSubSection,
+  SideSubSectionHeader,
+  Link
 } from '../../styles'
 
 import { AdressCardIcon, ToolboxIcon, CodeIcon, BriefcaseIcon, GraduationCapIcon } from '../Icons'
@@ -24,7 +26,7 @@ const jobExperience = [
     tasks: ['Coding', 'Coding', 'More coding']
   },
   {
-    mainTitle: 'Medewerker Workforce Management',
+    mainTitle: 'Medewerker WFM',
     subTitle: 'Woonstad Rotterdam (woningcorporatie)',
     period: '08/2015 – 06/2019',
     tasks: [
@@ -61,7 +63,7 @@ const education = [
 
 const languages = ['HTML', 'CSS', 'Javascript', 'Ruby']
 
-const frameworksLibraries = ['React', 'Redux', 'Styled-components', 'Ruby on rails']
+const frameworksLibraries = ['React', 'Redux', 'Styled-components', 'Ruby on Rails']
 
 const other = ['git(hub)']
 
@@ -75,21 +77,30 @@ function Resume() {
           </Header>
           <SideSection>
             <SideSubSection>
-              <SectionHeader>
+              <SideSubSectionHeader>
                 <AdressCardIcon />
                 <h3>Contact</h3>
-              </SectionHeader>
+              </SideSubSectionHeader>
               <ContactList>
                 <li>atrincas@gmail.com</li>
-                <li>linkedin.com/atrincas</li>
+                <li>
+                  <Link href="https://www.linkedin.com/in/adamtrincas/" target="blank">
+                    linkedin.com/atrincas
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://github.com/atrincas" target="blank">
+                    github.com/atrincas
+                  </Link>
+                </li>
                 <li>Rotterdam, Zuid-Holland</li>
               </ContactList>
             </SideSubSection>
             <SideSubSection>
-              <SectionHeader>
+              <SideSubSectionHeader>
                 <ToolboxIcon />
                 <h3>Skills</h3>
-              </SectionHeader>
+              </SideSubSectionHeader>
               <SkillsSection title="Talen" skills={languages} />
               <SkillsSection title="Frameworks & Libraries" skills={frameworksLibraries} />
               <SkillsSection title="Overig" skills={other} />
@@ -98,7 +109,7 @@ function Resume() {
         </section>
         <MainSection>
           <section>
-            <SectionHeader fullWidth>
+            <SectionHeader>
               <BriefcaseIcon />
               <h3>Werkervaring</h3>
             </SectionHeader>
@@ -113,7 +124,7 @@ function Resume() {
             ))}
           </section>
           <section>
-            <SectionHeader fullWidth>
+            <SectionHeader>
               <CodeIcon />
               <h3>Persoonlijke projecten</h3>
             </SectionHeader>
@@ -130,7 +141,7 @@ function Resume() {
             </p>
           </section>
           <section>
-            <SectionHeader fullWidth>
+            <SectionHeader>
               <GraduationCapIcon />
               <h3>Opleidingen</h3>
             </SectionHeader>
