@@ -1,7 +1,12 @@
 import styled, { css } from 'styled-components'
+import { desktopUp } from '../../styles'
 
 const margin = css`
-  margin-right: ${props => props.theme.gutters.extraSmall};
+  margin: 0 ${props => props.theme.gutters.mobile.extraSmall};
+
+  ${desktopUp} {
+    margin: 0 ${props => props.theme.gutters.desktop.extraSmall};
+  }
 `
 
 export const AdressCardIcon = styled.i.attrs({
@@ -12,12 +17,6 @@ export const AdressCardIcon = styled.i.attrs({
 
 export const ToolboxIcon = styled.i.attrs({
   className: 'fas fa-toolbox'
-})`
-  ${margin}
-`
-
-export const CodeIcon = styled.i.attrs({
-  className: 'fas fa-code'
 })`
   ${margin}
 `

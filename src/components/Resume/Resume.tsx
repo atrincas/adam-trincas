@@ -12,10 +12,12 @@ import {
   SideSection,
   SideSubSection,
   SideSubSectionHeader,
-  Link
+  Link,
+  SubSectionTitleWrapper,
+  SkillsWrapper
 } from '../../styles'
 
-import { AdressCardIcon, ToolboxIcon, CodeIcon, BriefcaseIcon, GraduationCapIcon } from '../Icons'
+import { AdressCardIcon, ToolboxIcon, BriefcaseIcon, GraduationCapIcon } from '../Icons'
 import { Header } from './Header'
 
 const jobExperience = [
@@ -78,8 +80,10 @@ function Resume() {
           <SideSection>
             <SideSubSection>
               <SideSubSectionHeader>
-                <AdressCardIcon />
-                <h3>Contact</h3>
+                <SubSectionTitleWrapper>
+                  <AdressCardIcon />
+                  <h3>Contact</h3>
+                </SubSectionTitleWrapper>
               </SideSubSectionHeader>
               <ContactList>
                 <li>atrincas@gmail.com</li>
@@ -98,12 +102,16 @@ function Resume() {
             </SideSubSection>
             <SideSubSection>
               <SideSubSectionHeader>
-                <ToolboxIcon />
-                <h3>Skills</h3>
+                <SubSectionTitleWrapper>
+                  <ToolboxIcon />
+                  <h3>Skills</h3>
+                </SubSectionTitleWrapper>
               </SideSubSectionHeader>
-              <SkillsSection title="Talen" skills={languages} />
-              <SkillsSection title="Frameworks & Libraries" skills={frameworksLibraries} />
-              <SkillsSection title="Overig" skills={other} />
+              <SkillsWrapper>
+                <SkillsSection title="Talen" skills={languages} />
+                <SkillsSection title="Frameworks & Libraries" skills={frameworksLibraries} />
+                <SkillsSection title="Overig" skills={other} />
+              </SkillsWrapper>
             </SideSubSection>
           </SideSection>
         </section>
@@ -122,23 +130,6 @@ function Resume() {
                 tasks={job.tasks}
               />
             ))}
-          </section>
-          <section>
-            <SectionHeader>
-              <CodeIcon />
-              <h3>Persoonlijke projecten</h3>
-            </SectionHeader>
-            <p style={{ padding: '1rem' }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum error molestiae
-              assumenda libero obcaecati nesciunt unde, sapiente itaque at, ratione autem vero sunt
-              dolor temporibus velit minus. Veniam, commodi nobis. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Eum, iste illum ex debitis neque ea, optio adipisci
-              natus nesciunt fugiat beatae praesentium? Commodi obcaecati natus impedit architecto
-              temporibus, error veritatis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio facilis beatae labore praesentium dolorem perferendis quos nobis id,
-              repellat similique magnam culpa corrupti delectus adipisci repudiandae. Suscipit nihil
-              doloribus ipsam.
-            </p>
           </section>
           <section>
             <SectionHeader>

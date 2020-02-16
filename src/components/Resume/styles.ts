@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { tabletUp, desktopUp } from '../../styles/BreakPoints'
+import { desktopUp } from '../../styles/BreakPoints'
 import profilePicture from '../../images/atrincas.jpeg'
 
 export const Base = styled.div`
@@ -68,7 +68,6 @@ export const SectionHeader = styled.header<{ fullWidth?: boolean }>`
 
   & h3 {
     display: inline;
-    margin-left: ${props => props.theme.gutters.mobile.small};
   }
 
   ${desktopUp} {
@@ -126,13 +125,8 @@ export const SideSubSectionHeader = styled.header`
   font-style: italic;
   font-weight: ${props => props.theme.typography.fontWeights.bold};
 
-  & i {
-    margin-left: ${props => props.theme.gutters.mobile.small};
-  }
-
   & h3 {
     display: inline;
-    margin-left: ${props => props.theme.gutters.mobile.small};
   }
 
   &::before,
@@ -147,14 +141,6 @@ export const SideSubSectionHeader = styled.header`
   ${desktopUp} {
     font-size: ${props => props.theme.typography.fontSizes.desktop.medium};
 
-    & i {
-      margin-left: ${props => props.theme.gutters.desktop.small};
-    }
-
-    & h3 {
-      margin-left: ${props => props.theme.gutters.desktop.small};
-    }
-
     &::before,
     &::after {
       margin: ${props => props.theme.gutters.desktop.extraSmall};
@@ -162,8 +148,16 @@ export const SideSubSectionHeader = styled.header`
   }
 `
 
+export const SubSectionTitleWrapper = styled.div`
+  padding: 0 ${props => props.theme.gutters.mobile.extraSmall};
+
+  ${desktopUp} {
+    padding: 0 ${props => props.theme.gutters.desktop.extraSmall};
+  }
+`
+
 export const SubSection = styled.section`
-  padding: ${props => props.theme.gutters.mobile.small};
+  padding: ${props => props.theme.gutters.mobile.small} ${props => props.theme.gutters.mobile.large};
 
   & h4 {
     font-size: ${props => props.theme.typography.fontSizes.mobile.medium};
@@ -185,7 +179,7 @@ export const SubSection = styled.section`
     padding: ${props => props.theme.gutters.desktop.small};
 
     & h4 {
-      font-size: ${props => props.theme.typography.fontSizes.desktop.medium};
+      font-size: ${props => props.theme.typography.fontSizes.desktop.small};
     }
 
     & h5 {
@@ -196,7 +190,7 @@ export const SubSection = styled.section`
 
 export const ContactList = styled.ul`
   list-style: none;
-  padding: ${props => props.theme.gutters.mobile.small};
+  padding: ${props => props.theme.gutters.mobile.small} ${props => props.theme.gutters.mobile.large};
 
   li {
     margin-bottom: 0.5rem;
@@ -238,7 +232,8 @@ export const ContactList = styled.ul`
   }
 
   ${desktopUp} {
-    padding: ${props => props.theme.gutters.desktop.small};
+    padding: ${props => props.theme.gutters.desktop.small}
+      ${props => props.theme.gutters.desktop.medium};
   }
 `
 
@@ -258,21 +253,30 @@ export const Link = styled.a`
   }
 `
 
-export const SkilssSectionTitle = styled.h4`
-  font-weight: ${props => props.theme.typography.fontWeights.bold};
-  font-style: italic;
-  padding: ${props => `${props.theme.gutters.mobile.small} ${props.theme.gutters.mobile.small}`} 0;
-  clear: left;
+export const SkillsWrapper = styled.div`
+  padding: ${props => props.theme.gutters.mobile.medium}
+    ${props => props.theme.gutters.mobile.large};
+
+  & section {
+    margin-bottom: ${props => props.theme.gutters.mobile.medium};
+  }
 
   ${desktopUp} {
-    padding: ${props => `${props.theme.gutters.desktop.small} ${props.theme.gutters.desktop.small}`}
-      0;
+    padding: ${props => props.theme.gutters.desktop.small};
+
+    & section {
+      margin-bottom: ${props => props.theme.gutters.desktop.medium};
+    }
   }
 `
 
-export const SkillsList = styled.ul`
-  padding: 0 ${props => `${props.theme.gutters.mobile.small} ${props.theme.gutters.mobile.small}`};
+export const SkilssSectionTitle = styled.h4`
+  font-weight: ${props => props.theme.typography.fontWeights.bold};
+  font-style: italic;
+  clear: left;
+`
 
+export const SkillsList = styled.ul`
   & li {
     background: ${props => props.theme.colors.lightBlue};
     margin: 0.5rem;
@@ -287,19 +291,11 @@ export const SkillsList = styled.ul`
       color: ${props => props.theme.colors.white};
     }
 
-    ${tabletUp} {
+    ${desktopUp} {
       float: left;
       padding: 0.5rem;
-    }
-
-    ${desktopUp} {
       padding: ${props => props.theme.gutters.desktop.extraSmall};
     }
-  }
-
-  ${desktopUp} {
-    padding: 0
-      ${props => `${props.theme.gutters.desktop.small} ${props.theme.gutters.desktop.small}`};
   }
 `
 
