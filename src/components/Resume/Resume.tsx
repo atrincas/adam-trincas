@@ -19,55 +19,7 @@ import {
 
 import { AdressCardIcon, ToolboxIcon, BriefcaseIcon, GraduationCapIcon } from '../Icons'
 import { Header } from './Header'
-
-const jobExperience = [
-  {
-    mainTitle: 'Frontend Developer',
-    subTitle: 'Mobiel.nl',
-    period: '07/2019 - Heden',
-    tasks: ['Coding', 'Coding', 'More coding']
-  },
-  {
-    mainTitle: 'Medewerker WFM',
-    subTitle: 'Woonstad Rotterdam (woningcorporatie)',
-    period: '08/2015 – 06/2019',
-    tasks: [
-      'Ontwikkelen en opstellen van roosters.',
-      'Verantwoordelijk voor het maken van dagelijkse managementrapportages en verschillende analyses.',
-      'Monitoren inzet en productiviteit van de medewerkers. Waar nodig medewerkers hierop aanspreken.',
-      'Aanspreekpunt en sparringspartner voor verschillende afdelingen en medewerkers.'
-    ]
-  },
-  {
-    mainTitle: 'Medewerker Klantcontact',
-    subTitle: 'Woonstad Rotterdam (woningcorporatie)',
-    period: '08/2012 – 08/2015',
-    tasks: [
-      'Telefonisch klantcontact: Informatie verstrekken, vragen beantwoorden, weerstandsgesprekken voeren.',
-      'Baliewerkzaamheden: Ontvangen en te woord staan van klanten. Intake en urgentieaanvragen indienen.',
-      'Administratieve handelingen: E-mail beantwoorden, opdrachtbonnen voor aannemers aanmaken.'
-    ]
-  }
-]
-
-const education = [
-  {
-    mainTitle: 'Luchtvaarttechnologie voltijd',
-    subTitle: 'Hogeschool Inholland Delft',
-    period: '2007 – 2009'
-  },
-  {
-    mainTitle: 'Havo, Profiel Natuur & Techniek',
-    subTitle: 'Gemini College Ridderkerk',
-    period: '2001 – 2007'
-  }
-]
-
-const languages = ['HTML', 'CSS', 'Javascript', 'Ruby']
-
-const frameworksLibraries = ['React', 'Redux', 'Styled-components', 'Ruby on Rails']
-
-const other = ['git(hub)']
+import { jobExperience, education, languages, frameworksLibraries, other } from './data'
 
 function Resume() {
   return (
