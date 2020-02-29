@@ -1,13 +1,24 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, useLocation } from 'react-router-dom'
 
 import Home from './components/Home'
 import NoMatch from './components/NoMatch'
 import { Resume } from './components'
 import { GlobalStyle, theme } from './styles'
+import Footer from './components/Footer'
 
 type ThemeType = typeof theme
+
+function renderFooter() {
+  let location = useLocation()
+
+  if (location.pathname === '/cv') {
+    return <Footer fixedPosition={false} />
+  } else {
+    return <Footer fixedPosition={true} />
+  }
+}
 
 function App() {
   return (
@@ -17,6 +28,7 @@ function App() {
         <Route exact path="/cv" component={Resume} />
         <Route path="*" component={NoMatch} />
       </Switch>
+      {renderFooter()}
       <GlobalStyle />
     </ThemeProvider>
   )

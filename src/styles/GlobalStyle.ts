@@ -50,4 +50,8 @@ h3,
 h4 {
   font-family: "Asap", sans-serif;
 }
+
+#root {
+  position: relative;
+}
 `

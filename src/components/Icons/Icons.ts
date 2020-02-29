@@ -32,3 +32,7 @@ export const GraduationCapIcon = styled.i.attrs({
 })`
   ${margin}
 `
+
+export const ReactIcon = styled.i.attrs({
+  className: 'fab fa-react'
+})``
