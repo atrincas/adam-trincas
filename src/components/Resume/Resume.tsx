@@ -19,7 +19,7 @@ import {
 
 import { AdressCardIcon, ToolboxIcon, BriefcaseIcon, GraduationCapIcon } from '../Icons'
 import { Header } from './Header'
-import { jobExperience, education, languages, frameworksLibraries, other } from './data'
+import { jobExperience, education, languages, frameworksLibraries, softSkills } from './data'
 
 function Resume() {
   return (
@@ -62,7 +62,7 @@ function Resume() {
               <SkillsWrapper>
                 <SkillsSection title="Talen" skills={languages} />
                 <SkillsSection title="Frameworks & Libraries" skills={frameworksLibraries} />
-                <SkillsSection title="Overig" skills={other} />
+                <SkillsSection title="Soft Skills" skills={softSkills} />
               </SkillsWrapper>
             </SideSubSection>
           </SideSection>

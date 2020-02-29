@@ -7,13 +7,15 @@ export const theme = {
         small: '1.75rem',
         medium: '2.5rem',
         large: '3.5rem',
-        extraLarge: '4.5rem'
+        extraLarge: '4.5rem',
+        superLarge: '6rem'
       },
       desktop: {
         small: '1rem',
         medium: '1.5rem',
         large: '2rem',
-        extraLarge: '2.5rem'
+        extraLarge: '2.5rem',
+        superLarge: '5rem'
       }
     },
 

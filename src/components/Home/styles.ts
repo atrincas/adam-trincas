@@ -6,26 +6,34 @@ export const Base = styled.main`
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
 
   ${desktopUp} {
     top: 50%;
   }
 `
 export const Heading = styled.h1`
-  font-size: ${props => props.theme.typography.fontSizes.mobile.large};
+  font-size: ${props => props.theme.typography.fontSizes.mobile.superLarge};
   font-weight: ${props => props.theme.typography.fontWeights.bold};
+  text-align: center;
 
   ${desktopUp} {
-    font-size: ${props => props.theme.typography.fontSizes.desktop.large};
+    font-size: ${props => props.theme.typography.fontSizes.desktop.superLarge};
 `
 
 export const SubHeading = styled.h2`
-  font-size: ${props => props.theme.typography.fontSizes.mobile.medium};
+  font-size: ${props => props.theme.typography.fontSizes.mobile.large};
   font-style: italic;
   color: ${props => props.theme.colors.blue};
+  text-align: center;
 
   ${desktopUp} {
-    font-size: ${props => props.theme.typography.fontSizes.desktop.medium};
+    font-size: ${props => props.theme.typography.fontSizes.desktop.extraLarge};
+`
+
+export const Nav = styled.nav`
+  text-align: center;
+  margin-top: ${props => props.theme.gutters.desktop.large};
 `
 
 export const Link = styled.a`
@@ -38,7 +46,6 @@ export const Link = styled.a`
   vertical-align: middle;
   text-decoration: none;
   background: transparent;
-  margin-top: ${props => props.theme.gutters.desktop.small};
 
   &:hover {
     .circle {
