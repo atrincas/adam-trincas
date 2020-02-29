@@ -30,6 +30,7 @@ export const HeaderContainer = styled.header`
   & h2 {
     font-size: ${props => props.theme.typography.fontSizes.mobile.large};
     font-style: italic;
+    color: ${props => props.theme.colors.blue};
     width: 100%;
     text-align: center;
     border-bottom: 1px solid #000;
