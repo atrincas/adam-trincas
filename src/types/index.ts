@@ -18,10 +18,3 @@ export type State = {
   languages: string[]
   softSkills: string[]
 }
-
-export type StateKey =
-  | 'education'
-  | 'frameworksLibraries'
-  | 'jobExperience'
-  | 'languages'
-  | 'softSkills'

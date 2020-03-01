@@ -23,22 +23,17 @@ import { AdressCardIcon, ToolboxIcon, BriefcaseIcon, GraduationCapIcon } from '.
 import { Header } from './Header'
 import Footer from '../Footer'
 import db from '../../firestore'
-import { State, StateKey } from '../../types'
+import { State } from '../../types'
 
 function Resume() {
   const [state, setState] = useState<State | null>(null)
 
   useEffect(() => {
-    let newState = {} as State
-    db.collection('resume')
+    db.doc('resume/0')
       .get()
-      .then(querySnapshot => {
-        const data = querySnapshot.docs.map(doc => doc.data())
-        data.forEach(obj => {
-          const key = Object.keys(obj)[0] as StateKey
-          newState[key] = obj[key]
-        })
-        setState(newState)
+      .then(snapshot => {
+        const data = snapshot.data() as State
+        setState(data)
       })
   }, [])
 
