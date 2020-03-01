@@ -8,3 +8,6 @@ dist
 
 # Prettier settings
 .prettierrc
+
+# ENV variables
+.env
