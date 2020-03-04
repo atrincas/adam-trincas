@@ -18,7 +18,7 @@ function SkillsSection({ title, skills }: SkillsSectionProps) {
       <SkilssSectionTitle>{title}</SkilssSectionTitle>
       <SkillsList>
         {skills.map(skill => (
-          <li>{skill}</li>
+          <li key={skill}>{skill}</li>
         ))}
       </SkillsList>
     </section>
@@ -35,8 +35,8 @@ function ExperienceSection({ mainTitle, subTitle, period, tasks }: ExperienceSec
       <h6>{period}</h6>
       {tasks && (
         <TasksList>
-          {tasks.map(task => (
-            <li>{task}</li>
+          {tasks.map((task, i) => (
+            <li key={`${period}-${i}`}>{task}</li>
           ))}
         </TasksList>
       )}
