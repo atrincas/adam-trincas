@@ -1,3 +1,11 @@
+export type personalDetails = {
+  fullName: string
+  profession: string
+  email: string
+  github: string
+  linkedIn: string
+  location: string
+}
 export type Education = {
   mainTitle: string
   period: string
@@ -12,6 +20,7 @@ export type JobExperience = {
 }
 
 export type State = {
+  personalDetails: personalDetails
   education: Education[]
   frameworksLibraries: string[]
   jobExperience: JobExperience[]

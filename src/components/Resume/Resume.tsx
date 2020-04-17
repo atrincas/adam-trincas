@@ -37,6 +37,8 @@ function Resume() {
       })
   }, [])
 
+  console.log('state', state)
+
   if (!state)
     return (
       <Wrapper>
@@ -44,12 +46,14 @@ function Resume() {
       </Wrapper>
     )
 
+  const { fullName, profession, email, github, linkedIn, location } = state.personalDetails
+
   return (
     <>
       <Base>
         <Main>
           <section>
-            <Header name="Adam Trincas" title="Frontend Developer">
+            <Header name={fullName} title={profession}>
               <ProfilePicture />
             </Header>
             <SideSection>
@@ -61,18 +65,18 @@ function Resume() {
                   </SubSectionTitleWrapper>
                 </SideSubSectionHeader>
                 <ContactList>
-                  <li>atrincas@gmail.com</li>
+                  <li>{email}</li>
                   <li>
-                    <Link href="https://www.linkedin.com/in/adamtrincas/" target="blank">
+                    <Link href={linkedIn} target="blank">
                       linkedin.com/atrincas
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://github.com/atrincas" target="blank">
+                    <Link href={github} target="blank">
                       github.com/atrincas
                     </Link>
                   </li>
-                  <li>Rotterdam, Zuid-Holland</li>
+                  <li>{location}</li>
                 </ContactList>
               </SideSubSection>
               <SideSubSection>
