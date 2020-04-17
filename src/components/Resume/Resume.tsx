@@ -21,9 +21,11 @@ import {
 
 import { AdressCardIcon, ToolboxIcon, BriefcaseIcon, GraduationCapIcon } from '../Icons'
 import { Header } from './Header'
+import NavButton from '../NavButton'
 import Footer from '../Footer'
 import db from '../../firestore'
 import { State } from '../../types'
+
 
 function Resume() {
   const [state, setState] = useState<State | null>(null)
@@ -37,8 +39,6 @@ function Resume() {
       })
   }, [])
 
-  console.log('state', state)
-
   if (!state)
     return (
       <Wrapper>
@@ -50,6 +50,7 @@ function Resume() {
 
   return (
     <>
+      <NavButton />
       <Base>
         <Main>
           <section>
