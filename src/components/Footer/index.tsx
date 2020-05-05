@@ -1,29 +1,15 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { ReactIcon } from '../Icons'
 
-function position(fixedPosition?: boolean) {
-  if (fixedPosition) {
-    return css`
-      position: fixed;
-      bottom: 0;
-    `
-  } else {
-    return css`
-      position: absolute;
-    `
-  }
-}
-
-const Base = styled.footer<{ fixedPosition?: boolean }>`
-  ${props => position(props.fixedPosition)}
+const Base = styled.footer`
   width: 100%;
   font-style: italic;
   text-align: center;
-  padding: ${props => props.theme.gutters.mobile.extraSmall} 0;
+  padding: ${(props) => props.theme.gutters.mobile.extraSmall} 0;
 `
 const Link = styled.a`
-  color: ${props => props.theme.colors.blue};
+  color: ${(props) => props.theme.colors.blue};
   text-decoration: none;
 
   &:hover {
@@ -31,9 +17,9 @@ const Link = styled.a`
   }
 `
 
-function Footer({ fixedPosition }: { fixedPosition?: boolean }) {
+function Footer() {
   return (
-    <Base fixedPosition={fixedPosition}>
+    <Base>
       <p>
         Build in React <ReactIcon />. Source code available on{' '}
         <Link href="https://github.com/atrincas" target="_blank">

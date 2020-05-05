@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
 import { ThemeType } from '../App'
-import { desktopUp } from './BreakPoints'
 
 export const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
 body,
@@ -36,12 +35,8 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   line-height: 1;
-  color: ${props => props.theme.colors.darkBlue};
-  background-color: ${props => props.theme.colors.white};
-
-  ${desktopUp} {
-    margin: 2.5rem 0;
-  }
+  color: ${(props) => props.theme.colors.darkBlue};
+  background-color: ${(props) => props.theme.colors.white};
 }
 
 h1,

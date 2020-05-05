@@ -21,11 +21,10 @@ import {
 
 import { AdressCardIcon, ToolboxIcon, BriefcaseIcon, GraduationCapIcon } from '../Icons'
 import { Header } from './Header'
-import NavButton from '../NavButton'
+import { Navigation } from '../Navigation'
 import Footer from '../Footer'
 import db from '../../firestore'
 import { State } from '../../types'
-
 
 function Resume() {
   const [state, setState] = useState<State | null>(null)
@@ -33,7 +32,7 @@ function Resume() {
   useEffect(() => {
     db.doc('resume/0')
       .get()
-      .then(snapshot => {
+      .then((snapshot) => {
         const data = snapshot.data() as State
         setState(data)
       })
@@ -50,7 +49,7 @@ function Resume() {
 
   return (
     <>
-      <NavButton />
+      <Navigation />
       <Base>
         <Main>
           <section>
@@ -104,7 +103,7 @@ function Resume() {
                 <BriefcaseIcon />
                 <h3>Werkervaring</h3>
               </SectionHeader>
-              {state.jobExperience.map(job => (
+              {state.jobExperience.map((job) => (
                 <ExperienceSection
                   key={job.period}
                   mainTitle={job.mainTitle}
@@ -119,7 +118,7 @@ function Resume() {
                 <GraduationCapIcon />
                 <h3>Opleidingen</h3>
               </SectionHeader>
-              {state.education.map(education => (
+              {state.education.map((education) => (
                 <ExperienceSection
                   key={education.period}
                   mainTitle={education.mainTitle}

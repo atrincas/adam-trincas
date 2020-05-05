@@ -6,7 +6,6 @@ import Home from './components/Home'
 import NoMatch from './components/NoMatch'
 import { Resume } from './components'
 import { GlobalStyle, theme } from './styles'
-import Footer from './components/Footer'
 
 type ThemeType = typeof theme
 
@@ -16,15 +15,12 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
-          <Footer fixedPosition={true} />
         </Route>
 
-        {/* Footer is inside Resume component */}
         <Route exact path="/cv" component={Resume} />
 
         <Route path="*">
           <NoMatch />
-          <Footer fixedPosition={true} />
         </Route>
       </Switch>
       <GlobalStyle />
