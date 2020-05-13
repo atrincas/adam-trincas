@@ -1,36 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
-import styled, { keyframes, css } from 'styled-components'
 import debounce from 'lodash/debounce'
 import { MobileOnly, DesktopOnly } from '../../styles'
 import Burger from './Burger'
 import NavContent from './NavContent'
-
-const movedown = keyframes`
-  from {
-    transform: translateY(-5rem);
-  }
-  to {
-    transform: translateY(0rem);
-  }
-`
-
-const burgerPosition = (sticky?: boolean, open?: boolean) => {
-  if (!sticky || (sticky && open)) return ``
-  if (sticky && !open)
-    return css`
-      position: fixed;
-      animation: ${movedown} 0.5s ease-in-out;
-    `
-}
-
-const MenuHeader = styled.div<{ sticky?: boolean; open?: boolean }>`
-  display: flex;
-  justify-content: flex-end;
-  padding: ${({ theme }) => theme.gutters.mobile.extraSmall} 0;
-  width: 100%;
-
-  ${({ sticky, open }) => burgerPosition(sticky, open)}
-`
+import { MenuHeader } from './styles'
 
 function Navigation() {
   const [active, setActive] = useState(false)
@@ -49,7 +22,6 @@ function Navigation() {
   function handleMobileBurger(open: boolean) {
     setActive(open)
     if (open) {
-      console.log(open)
       document.body.style.overflowY = 'hidden'
     } else {
       document.body.style.overflowY = ''
