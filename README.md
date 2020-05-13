@@ -2,19 +2,64 @@
 
 > Personal website with resume.
 
-This is the source code of my personal website. Build in React with typescript. The data for the resume component is fetched from google firebase.
+This is the source code of my personal website. Build in React with typescript. The data for the resume component is fetched from Google Firebase.
 
 ## Installation & development setup
 
 OS X & Linux:
 
 ```sh
-git clone git@github.com:atrincas/adam-trincas.git
-cd adam-trincas/
+git clone git@github.com:atrincas/personal-website.git
+cd personal-website/
 yarn install
 ```
 
-For the resume component you need to setup a database with firebase. After that make and .env file and fill in your creditentials:
+For the resume component you need to setup a database with [Firebase](https://firebase.google.com/).
+
+The data should have the following structure (You can also find the type definitions in /types/index.ts):
+
+```json
+{
+  "resume": [
+    {
+      "personalDetails": {
+        "fullName": "",
+        "profession": "",
+        "email": "",
+        "github": {
+          "title": "",
+          "link": ""
+        },
+        "linkedIn": {
+          "title": "",
+          "link": ""
+        },
+        "location": ""
+      },
+      "languages": ["", ""],
+      "frameworksLibraries": ["", ""],
+      "softSkills": ["", ""],
+      "education": [
+        {
+          "mainTitle": "",
+          "subTitle": "",
+          "period": ""
+        }
+      ],
+      "jobExperience": [
+        {
+          "mainTitle": "",
+          "subTitle": "",
+          "period": "",
+          "tasks": ["", ""]
+        }
+      ]
+    }
+  ]
+}
+```
+
+To ensure a connection with the Firebase database create an .env file and fill in your creditentials:
 
 ```env
 API_KEY=<your_api_key>
