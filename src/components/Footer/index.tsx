@@ -6,7 +6,7 @@ const Base = styled.footer`
   width: 100%;
   font-style: italic;
   text-align: center;
-  padding: ${(props) => props.theme.gutters.mobile.extraSmall} 0;
+  padding: ${(props) => props.theme.gutters.mobile.extraSmall};
 `
 const Link = styled.a`
   color: ${(props) => props.theme.colors.blue};
@@ -21,8 +21,11 @@ function Footer() {
   return (
     <Base>
       <p>
-        Build in React <ReactIcon />. Source code available on{' '}
-        <Link href="https://github.com/atrincas" target="_blank">
+        Build in React <ReactIcon />
+      </p>
+      <p>
+        Source code available on{' '}
+        <Link href="https://github.com/atrincas/personal-website" target="_blank">
           GitHub
         </Link>
         .
