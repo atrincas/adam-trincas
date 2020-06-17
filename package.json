@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "parcel index.html --out-dir build/debug",
-    "build": "parcel build index.html --out-dir build/release --public-url ./"
+    "build": "parcel build index.html --out-dir build/release --public-url ./ && echo '/* /index.html  200' | cat >build/release/_redirects"
   },
   "license": "MIT",
   "dependencies": {
