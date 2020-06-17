@@ -75,6 +75,13 @@ APP_ID=<your_app_id>
 MEASUREMENT_ID=<your_app_measurement_id>
 ```
 
+You can add your own profile picture in the src/images directory and change the import line in
+src/components/Resume/styles.ts:
+
+```ts
+import profilePicture from '../../images/<your_file_name>.jpeg'
+```
+
 ## Contributing
 
 1. Fork it (<https://github.com/yourname/yourproject/fork>)
