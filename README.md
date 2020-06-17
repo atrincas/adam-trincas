@@ -1,8 +1,9 @@
-# Adam Trincas
+# [Adam Trincas](https://adamtrincas.netlify.app/) &middot; [![Netlify Status](https://api.netlify.com/api/v1/badges/63a938a2-ca72-4953-a5c3-e6a0e35076d0/deploy-status)](https://app.netlify.com/sites/adamtrincas/deploys)
 
 > Personal website with resume.
 
-This is the source code of my personal website. Build in React with typescript. The data for the resume component is fetched from Google Firebase.
+This is the source code of my personal website. Build in React with typescript. The data for the
+resume component is fetched from Google Firebase.
 
 ## Installation & development setup
 
@@ -16,7 +17,8 @@ yarn install
 
 For the resume component you need to setup a database with [Firebase](https://firebase.google.com/).
 
-The data should have the following structure (You can also find the type definitions in /types/index.ts):
+The data should have the following structure (You can also find the type definitions in
+/types/index.ts):
 
 ```json
 {
@@ -59,7 +61,8 @@ The data should have the following structure (You can also find the type definit
 }
 ```
 
-To ensure a connection with the Firebase database create an .env file and fill in your creditentials:
+To ensure a connection with the Firebase database create an .env file and fill in your
+creditentials:
 
 ```env
 API_KEY=<your_api_key>
