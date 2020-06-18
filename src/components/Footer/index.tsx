@@ -6,7 +6,7 @@ const Base = styled.footer`
   width: 100%;
   font-style: italic;
   text-align: center;
-  padding: ${(props) => props.theme.gutters.mobile.extraSmall};
+  padding: ${(props) => props.theme.gutters.mobile.extraSmall} 0;
 `
 const Link = styled.a`
   color: ${(props) => props.theme.colors.blue};
