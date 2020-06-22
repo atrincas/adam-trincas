@@ -62,7 +62,12 @@ function Resume() {
 
   useEffect(() => {
     const getLanguage = () => i18n.language || window.localStorage.i18nextLng
-    setLanguage(getLanguage())
+    // TODO: Need better fix for setting the correct language:
+    if (getLanguage() === 'nl') {
+      setLanguage('nl')
+    } else {
+      setLanguage('en')
+    }
   }, [language])
 
   if (!state || !loaded)
