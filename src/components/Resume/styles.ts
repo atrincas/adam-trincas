@@ -353,3 +353,7 @@ export const Loader = styled.div`
     }
   }
 `
+
+export const LanguageForm = styled.form`
+  text-align: center;
+`
