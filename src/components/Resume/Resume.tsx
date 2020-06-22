@@ -39,7 +39,7 @@ function Resume() {
   }
 
   useEffect(() => {
-    db.doc('resume/0')
+    db.doc('resume/personalDetails')
       .get()
       .then((snapshot) => {
         const data = snapshot.data() as State
@@ -77,7 +77,7 @@ function Resume() {
       </Wrapper>
     )
 
-  const { fullName, profession, email, github, linkedIn, location } = state.personalDetails
+  const { fullName, profession, email, github, linkedIn, location } = state
 
   return (
     <>
