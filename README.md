@@ -2,8 +2,17 @@
 
 > Personal website with resume.
 
-This is the source code of my personal website. Build in React with typescript. The data for the
-resume component is fetched from Google Firebase.
+This is the source code of my personal website. It contains a simple welcome page with a link to my
+resume. The app can can be displayed in different languages. Data for the resume component is stored
+inside a database.
+
+## Technologies Used
+
+- [React](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/)
+- [i18next](https://www.i18next.com/)
+- [Firebase](https://firebase.google.com/)
 
 ## Installation & development setup
 
@@ -17,27 +26,42 @@ yarn install
 
 For the resume component you need to setup a database with [Firebase](https://firebase.google.com/).
 
-The data should have the following structure (You can also find the type definitions in
-/types/index.ts):
+The data for my personal details has the following structure (You can also find the type definitions
+in /types/index.ts):
 
 ```json
 {
-  "resume": [
-    {
-      "personalDetails": {
-        "fullName": "",
-        "profession": "",
-        "email": "",
-        "github": {
-          "title": "",
-          "link": ""
-        },
-        "linkedIn": {
-          "title": "",
-          "link": ""
-        },
-        "location": ""
+  "resume": {
+    "personalDetails": {
+      "fullName": "",
+      "profession": "",
+      "email": "",
+      "github": {
+        "title": "",
+        "link": ""
       },
+      "linkedIn": {
+        "title": "",
+        "link": ""
+      },
+      "location": ""
+    }
+  }
+}
+```
+
+The translations json has the following structure:
+
+```json
+{
+  "translations": {
+    "en": {
+      "headers": {
+        "languages": "",
+        "workExperience": "",
+        "education": ""
+      },
+    {
       "languages": ["", ""],
       "frameworksLibraries": ["", ""],
       "softSkills": ["", ""],
@@ -57,7 +81,7 @@ The data should have the following structure (You can also find the type definit
         }
       ]
     }
-  ]
+  }
 }
 ```
 
