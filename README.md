@@ -60,27 +60,26 @@ The translations json has the following structure:
         "languages": "",
         "workExperience": "",
         "education": ""
-      },
-    {
-      "languages": ["", ""],
-      "frameworksLibraries": ["", ""],
-      "softSkills": ["", ""],
-      "education": [
-        {
-          "mainTitle": "",
-          "subTitle": "",
-          "period": ""
-        }
-      ],
-      "jobExperience": [
-        {
-          "mainTitle": "",
-          "subTitle": "",
-          "period": "",
-          "tasks": ["", ""]
-        }
-      ]
-    }
+      }
+    },
+    "languages": ["", ""],
+    "frameworksLibraries": ["", ""],
+    "softSkills": ["", ""],
+    "education": [
+      {
+        "mainTitle": "",
+        "subTitle": "",
+        "period": ""
+      }
+    ],
+    "jobExperience": [
+      {
+        "mainTitle": "",
+        "subTitle": "",
+        "period": "",
+        "tasks": ["", ""]
+      }
+    ]
   }
 }
 ```
