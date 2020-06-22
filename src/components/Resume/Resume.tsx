@@ -32,7 +32,7 @@ import { State, JobExperience, Education } from '../../types'
 function Resume() {
   const [state, setState] = useState<State | null>(null)
   const [loaded, setLoaded] = useState(false)
-  const [language, setLanguage] = useState('nl')
+  const [language, setLanguage] = useState('')
   const { t } = useTranslation()
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng)
@@ -59,6 +59,11 @@ function Resume() {
         })
       })
   }, [])
+
+  useEffect(() => {
+    const getLanguage = () => i18n.language || window.localStorage.i18nextLng
+    setLanguage(getLanguage())
+  }, [language])
 
   if (!state || !loaded)
     return (
