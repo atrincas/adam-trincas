@@ -31,6 +31,7 @@ section {
 
 ul {
   list-style: none;
+  line-height: 1.25;
 }
 
 body {
