@@ -1,7 +1,11 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+
 import { Base, Heading, SubHeading, Nav, Circle, Arrow, Text, Link } from './styles'
 
 function Home() {
+  const { t } = useTranslation()
+
   return (
     <Base>
       <header>
@@ -15,7 +19,7 @@ function Home() {
           <Circle className="circle" aria-hidden="true">
             <Arrow></Arrow>
           </Circle>
-          <Text className="text">Bekijk mijn C.V.</Text>
+          <Text className="text">{t('home:link')}</Text>
         </Link>
       </Nav>
     </Base>
