@@ -1,10 +1,10 @@
-export type personalDetails = {
-  fullName: string
-  profession: string
+export type PersonalDetails = {
   email: string
-  github: string
-  linkedIn: string
+  fullName: string
+  github: { link: string; title: string }
+  linkedIn: { link: string; title: string }
   location: string
+  profession: string
 }
 export type Education = {
   mainTitle: string
@@ -17,13 +17,4 @@ export type JobExperience = {
   period: string
   subTitle: string
   tasks: string[]
-}
-
-export type State = {
-  personalDetails: personalDetails
-  education: Education[]
-  frameworksLibraries: string[]
-  jobExperience: JobExperience[]
-  languages: string[]
-  softSkills: string[]
 }

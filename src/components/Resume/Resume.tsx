@@ -27,10 +27,10 @@ import { Navigation } from '../Navigation'
 import Footer from '../Footer'
 import db from '../../firestore'
 import i18n from '../../i18n'
-import { State, JobExperience, Education } from '../../types'
+import { PersonalDetails, JobExperience, Education } from '../../types'
 
 function Resume() {
-  const [state, setState] = useState<State | null>(null)
+  const [personalDetails, setPersonalDetails] = useState<PersonalDetails | null>(null)
   const [loaded, setLoaded] = useState(false)
   const [language, setLanguage] = useState('')
   const { t } = useTranslation()
@@ -42,8 +42,8 @@ function Resume() {
     db.doc('resume/personalDetails')
       .get()
       .then((snapshot) => {
-        const data = snapshot.data() as State
-        setState(data)
+        const data = snapshot.data() as PersonalDetails
+        setPersonalDetails(data)
       })
 
     db.collection('translations')
@@ -70,14 +70,14 @@ function Resume() {
     }
   }, [language])
 
-  if (!state || !loaded)
+  if (!personalDetails || !loaded)
     return (
       <Wrapper>
         <Loader />
       </Wrapper>
     )
 
-  const { fullName, profession, email, github, linkedIn, location } = state
+  const { fullName, profession, email, github, linkedIn, location } = personalDetails
 
   return (
     <>
@@ -113,13 +113,13 @@ function Resume() {
                 <ContactList>
                   <li>{email}</li>
                   <li>
-                    <Link href={linkedIn} target="blank">
-                      linkedin.com/atrincas
+                    <Link href={linkedIn.link} target="blank">
+                      {linkedIn.title}
                     </Link>
                   </li>
                   <li>
-                    <Link href={github} target="blank">
-                      github.com/atrincas
+                    <Link href={github.link} target="blank">
+                      {github.title}
                     </Link>
                   </li>
                   <li>{location}</li>
