@@ -2,8 +2,6 @@ import { createGlobalStyle } from 'styled-components'
 import { ThemeType } from '../App'
 
 export const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
-@import url('https://fonts.googleapis.com/css2?family=Asap&family=Open+Sans&display=swap');
-
 body,
 div,
 h1,
