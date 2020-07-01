@@ -2,6 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { Base, Heading, SubHeading, Nav, Circle, Arrow, Text, Link } from './styles'
+import LanguageForm from '../LanguageForm'
 
 function Home() {
   const { t } = useTranslation()
@@ -9,6 +10,7 @@ function Home() {
   return (
     <Base>
       <header>
+        <LanguageForm />
         <hgroup>
           <Heading>Adam Trincas</Heading>
           <SubHeading>Frontend Developer</SubHeading>

@@ -18,3 +18,21 @@ export type JobExperience = {
   subTitle: string
   tasks: string[]
 }
+
+export type State = {
+  language: string
+}
+
+export type Context = {
+  state: State
+  dispatch: React.Dispatch<Action>
+}
+
+export type Children = {
+  children: React.ReactNode
+}
+
+export type Action = {
+  type: 'LANGUAGE_CHANGED'
+  value: string
+}

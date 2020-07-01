@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { SkillsSection, ExperienceSection } from './Sections'
 
 import {
-  Base,
   Main,
+  Base,
   ProfilePicture,
   ContactList,
   MainSection,
@@ -18,7 +18,6 @@ import {
   SkillsWrapper,
   Wrapper,
   Loader,
-  LanguageForm,
 } from '../../styles'
 
 import { AdressCardIcon, ToolboxIcon, BriefcaseIcon, GraduationCapIcon } from '../Icons'
@@ -28,15 +27,12 @@ import Footer from '../Footer'
 import db from '../../firestore'
 import i18n from '../../i18n'
 import { PersonalDetails, JobExperience, Education } from '../../types'
+import LanguageForm from '../LanguageForm'
 
 function Resume() {
   const [personalDetails, setPersonalDetails] = useState<PersonalDetails | null>(null)
   const [loaded, setLoaded] = useState(false)
-  const [language, setLanguage] = useState('')
   const { t } = useTranslation()
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng)
-  }
 
   useEffect(() => {
     db.doc('resume/personalDetails')
@@ -60,16 +56,6 @@ function Resume() {
       })
   }, [])
 
-  useEffect(() => {
-    const getLanguage = () => i18n.language || window.localStorage.i18nextLng
-    // TODO: Need better fix for setting the correct language:
-    if (getLanguage() === 'nl') {
-      setLanguage('nl')
-    } else {
-      setLanguage('en')
-    }
-  }, [language])
-
   if (!personalDetails || !loaded)
     return (
       <Wrapper>
@@ -82,20 +68,7 @@ function Resume() {
   return (
     <>
       <Navigation />
-      <LanguageForm>
-        <label htmlFor="language-select"></label>
-        <select
-          id="language-select"
-          value={language}
-          onChange={(e) => {
-            setLanguage(e.target.value)
-            changeLanguage(e.target.value)
-          }}
-        >
-          <option value="nl">Nederlands</option>
-          <option value="en">English</option>
-        </select>
-      </LanguageForm>
+      <LanguageForm />
       <Base>
         <Main>
           <section>
