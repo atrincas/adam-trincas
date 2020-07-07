@@ -70,7 +70,7 @@ function ResumePDF({ match }: Props) {
         })
       })
 
-    const currentLanguage = match.params.lang
+    const currentLanguage = match.params.lang === 'nl' ? 'nl' : 'en'
     dispatch({ type: 'LANGUAGE_CHANGED', value: currentLanguage })
   }, [])
 
