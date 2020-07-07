@@ -27,7 +27,7 @@ function App() {
 
         <Route exact path="/cv" component={Resume} />
 
-        <Route exact path="/cv-pdf/:lang" component={ResumePDF} />
+        <Route exact path="/cv-pdf" component={ResumePDF} />
 
         <Route path="*">
           <Redirect to="/" />

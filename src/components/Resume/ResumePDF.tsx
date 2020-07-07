@@ -30,25 +30,25 @@ import { PersonalDetails, JobExperience, Education } from '../../types'
 import LanguageForm from '../LanguageForm'
 import { store } from '../../store'
 
-type Match = {
-  isExact: boolean
-  params: {
-    lang: string
-  }
-  path: string
-  url: string
-}
+// type Match = {
+//   isExact: boolean
+//   params: {
+//     lang: string
+//   }
+//   path: string
+//   url: string
+// }
 
-type Props = {
-  match: Match
-}
+// type Props = {
+//   match: Match
+// }
 
-function ResumePDF({ match }: Props) {
+function ResumePDF(props) {
   const [personalDetails, setPersonalDetails] = useState<PersonalDetails | null>(null)
   const [loaded, setLoaded] = useState(false)
   const { dispatch } = useContext(store)
   const { t } = useTranslation()
-
+  console.log(props)
   useEffect(() => {
     db.doc('resume/personalDetails')
       .get()
@@ -70,8 +70,8 @@ function ResumePDF({ match }: Props) {
         })
       })
 
-    const currentLanguage = match.params.lang === 'nl' ? 'nl' : 'en'
-    dispatch({ type: 'LANGUAGE_CHANGED', value: currentLanguage })
+    // const currentLanguage = match.params.lang === 'nl' ? 'nl' : 'en'
+    // dispatch({ type: 'LANGUAGE_CHANGED', value: currentLanguage })
   }, [])
 
   if (!personalDetails || !loaded)
