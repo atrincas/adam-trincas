@@ -5,7 +5,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import i18n from './i18n'
 import { store } from './store'
 import Home from './components/Home'
-import { Resume } from './components'
+import { Resume, ResumePDF } from './components'
 import { GlobalStyle, theme } from './styles'
 
 type ThemeType = typeof theme
@@ -26,6 +26,8 @@ function App() {
         </Route>
 
         <Route exact path="/cv" component={Resume} />
+
+        <Route exact path="/cv-pdf/:lang" component={ResumePDF} />
 
         <Route path="*">
           <Redirect to="/" />
