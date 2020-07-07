@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+import * as queryString from 'query-string'
 
 import { SkillsSection, ExperienceSection } from './Sections'
 
@@ -30,25 +31,12 @@ import { PersonalDetails, JobExperience, Education } from '../../types'
 import LanguageForm from '../LanguageForm'
 import { store } from '../../store'
 
-// type Match = {
-//   isExact: boolean
-//   params: {
-//     lang: string
-//   }
-//   path: string
-//   url: string
-// }
-
-// type Props = {
-//   match: Match
-// }
-
 function ResumePDF(props) {
   const [personalDetails, setPersonalDetails] = useState<PersonalDetails | null>(null)
   const [loaded, setLoaded] = useState(false)
   const { dispatch } = useContext(store)
   const { t } = useTranslation()
-  console.log(props)
+
   useEffect(() => {
     db.doc('resume/personalDetails')
       .get()
@@ -70,8 +58,8 @@ function ResumePDF(props) {
         })
       })
 
-    // const currentLanguage = match.params.lang === 'nl' ? 'nl' : 'en'
-    // dispatch({ type: 'LANGUAGE_CHANGED', value: currentLanguage })
+    const currentLanguage = queryString.parse(props.location.search).lang === 'nl' ? 'nl' : 'en'
+    dispatch({ type: 'LANGUAGE_CHANGED', value: currentLanguage })
   }, [])
 
   if (!personalDetails || !loaded)
