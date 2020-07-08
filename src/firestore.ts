@@ -1,5 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
+import 'firebase/analytics'
 
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
@@ -12,6 +13,7 @@ const firebaseConfig = {
   measurementId: process.env.MEASUREMENT_ID
 }
 firebase.initializeApp(firebaseConfig)
+firebase.analytics()
 const db = firebase.firestore()
 
 export default db
