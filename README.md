@@ -1,8 +1,8 @@
-# [Adam Trincas](https://adamtrincas.netlify.app/) &middot; [![Netlify Status](https://api.netlify.com/api/v1/badges/63a938a2-ca72-4953-a5c3-e6a0e35076d0/deploy-status)](https://app.netlify.com/sites/adamtrincas/deploys)
+# [Personal Resume](https://adamtrincas.netlify.app/) &middot; [![Netlify Status](https://api.netlify.com/api/v1/badges/63a938a2-ca72-4953-a5c3-e6a0e35076d0/deploy-status)](https://app.netlify.com/sites/adamtrincas/deploys)
 
-> Personal website with resume.
+> Personal resume page written with React.
 
-This is the source code of my personal website. It contains a simple welcome page with a link to my
+This is the source code of my personal resume. It contains a simple welcome page with a link to my
 resume. The app can can be displayed in different languages. Data for the resume component is stored
 inside a database.
 
