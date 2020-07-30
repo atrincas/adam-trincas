@@ -21,11 +21,11 @@ function Footer() {
   return (
     <Base>
       <p>
-        Build in React <ReactIcon />
+        Build with React <ReactIcon />
       </p>
       <p>
         Source code available on{' '}
-        <Link href="https://github.com/atrincas/personal-website" target="_blank">
+        <Link href="https://github.com/atrincas/personal-resume" target="_blank">
           GitHub
         </Link>
         .
