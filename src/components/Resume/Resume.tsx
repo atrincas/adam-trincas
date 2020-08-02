@@ -17,7 +17,7 @@ import {
   SubSectionTitleWrapper,
   SkillsWrapper,
   Wrapper,
-  Loader,
+  Loader
 } from '../../styles'
 
 import { AdressCardIcon, ToolboxIcon, BriefcaseIcon, GraduationCapIcon } from '../Icons'
@@ -63,7 +63,7 @@ function Resume() {
       </Wrapper>
     )
 
-  const { fullName, profession, email, github, linkedIn, location } = personalDetails
+  const { fullName, profession, email, website, github, linkedIn, location } = personalDetails
 
   return (
     <>
@@ -85,6 +85,11 @@ function Resume() {
                 </SideSubSectionHeader>
                 <ContactList>
                   <li>{email}</li>
+                  <li>
+                    <Link href={website.link} target="blank">
+                      {website.title}
+                    </Link>
+                  </li>
                   <li>
                     <Link href={linkedIn.link} target="blank">
                       {linkedIn.title}
@@ -137,7 +142,7 @@ function Resume() {
                     period={period}
                     tasks={tasks}
                   />
-                ),
+                )
               )}
             </section>
             <section>
@@ -153,7 +158,7 @@ function Resume() {
                     subTitle={subTitle}
                     period={period}
                   />
-                ),
+                )
               )}
             </section>
           </MainSection>

@@ -44,6 +44,10 @@ in /types/index.ts):
         "title": "",
         "link": ""
       },
+      "website": {
+        "title": "",
+        "link": ""
+      },
       "location": ""
     }
   }

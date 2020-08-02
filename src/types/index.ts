@@ -3,6 +3,7 @@ export type PersonalDetails = {
   fullName: string
   github: { link: string; title: string }
   linkedIn: { link: string; title: string }
+  website: { link: string; title: string }
   location: string
   profession: string
 }

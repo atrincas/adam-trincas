@@ -212,17 +212,23 @@ export const ContactList = styled.ul`
 
     &:nth-child(2) {
       &::before {
-        content: '\f08c'; // linkedin
+        content: '\f08e'; // website
       }
     }
 
     &:nth-child(3) {
       &::before {
-        content: '\f092'; // github
+        content: '\f08c'; // linkedin
       }
     }
 
     &:nth-child(4) {
+      &::before {
+        content: '\f092'; // github
+      }
+    }
+
+    &:nth-child(5) {
       &::before {
         content: '\f3c5'; // location
       }
