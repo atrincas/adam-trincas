@@ -1,3 +1,0 @@
-[build]
-publish = "build/release/"
-command = "yarn build"
