@@ -1,4 +1,4 @@
-# [Personal Resume](https://adamtrincas.netlify.app/) &middot; [![Netlify Status](https://api.netlify.com/api/v1/badges/63a938a2-ca72-4953-a5c3-e6a0e35076d0/deploy-status)](https://app.netlify.com/sites/adamtrincas/deploys)
+# Personal Resume
 
 > Personal resume page written with React.
 
